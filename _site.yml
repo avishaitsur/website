@@ -1,0 +1,18 @@
+name: "Avishai M Tsur"
+title: "Avishai M Tsur"
+description: |
+  Avishai M Tsur
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - icon: fa fa-github
+      href: https://github.com/avishaitsur
+    - icon: fa fa-twitter
+      href: https://twitter.com/AvishaiTsur
+    - icon: fa fa-graduation-cap
+      href: https://scholar.google.co.il/citations?hl=en&user=ClzeE2UAAAAJ
+output: distill::distill_article
