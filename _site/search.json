@@ -4,15 +4,15 @@
       "path": "about.html",
       "title": "About me",
       "author": [],
-      "contents": "\r\n\r\n\r\nI’m a physician, educator, and researcher.\r\nEducation\r\nI graduated Medicine from Ben-Gurion University, Israel; completed my Master of Health Administration cum laude from Bar-Ilan University, Israel.\r\nResearch experience\r\nI have published over 20 scientific articles, received grants totaling 400K NIS + 40K USD, served as a reviewer for four journals, mentored MD students, and wrote a book chapter.\r\nProfessional experience\r\nI started volunteering as a first responder in Magen David Adom, Israel. During my studies, I worked as a physician assistant in internal medicine. Later, I served as the director of physician assistants in Soroka Medical Center, Israel, where I also did my internship. Currently, I’m a resident in internal medicine in Sheba Tel-Hashomer Medical Center, Israel\r\nTeaching experience\r\nI taught physics at Ben-Gurion University, Israel to biology, pharmacy, nursing, and medical students for over eight years. Later, I taught leadership and tactical medicine to paramedics and physicians. Currently, I teach medical students internal medicine and R for biomedical research.\r\nAwards\r\nIn 2013-2014 I won twice the Best Speaker award of the Israeli National Debating Championship. In 2014 I also won an Intern’s Award of Excellence from Soroka Medical Center, Israel. In 2017, I won an Award of Excellence from the Technological and Logistics Directorate, Israel Defense Forces. In 2019, an assay I first-authored won a creative writing contest by the Technological and Logistics Directorate, Israel Defense Forces. In 2020, my team won a Medical Data Science Hackathon for the Israel Defense Forces Medical Corps.\r\nResearch interests\r\nMy main research interest is cardiology. However, I love to clean and wrangle data of all sorts so you can find my name on publications in tactical medicine, rheumatology, endocrinology, and even obstetrics.\r\nPersonal\r\n\r\nI’m married to Miriam and a father to Barack.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-15T21:53:54+03:00"
+      "contents": "\r\n\r\n\r\nI’m a physician, educator, and researcher.\r\nEducation\r\nI graduated Medicine from Ben-Gurion University, Israel; completed my Master of Health Administration cum laude from Bar-Ilan University, Israel.\r\nResearch experience\r\nI have published over 20 scientific articles, received grants totaling 400K NIS + 40K USD, served as a reviewer for five journals, mentored MD students, and wrote a book chapter.\r\nProfessional experience\r\nI started volunteering as a first responder in Magen David Adom, Israel. During my studies, I worked as a physician assistant in internal medicine. Later, I served as the director of physician assistants in Soroka Medical Center, Israel, where I also did my internship. Currently, I’m a resident in internal medicine in Sheba Tel-Hashomer Medical Center, Israel\r\nTeaching experience\r\nI taught physics at Ben-Gurion University, Israel to biology, pharmacy, nursing, and medical students for over eight years. Later, I taught leadership and tactical medicine to paramedics and physicians. Currently, I teach medical students internal medicine and R for biomedical research.\r\nAwards\r\nIn 2013-2014 I won twice the Best Speaker award of the Israeli National Debating Championship. In 2014 I also won an Intern’s Award of Excellence from Soroka Medical Center, Israel. In 2017, I won an Award of Excellence from the Technological and Logistics Directorate, Israel Defense Forces. In 2019, an assay I first-authored won a creative writing contest by the Technological and Logistics Directorate, Israel Defense Forces. In 2020, my team won a Medical Data Science Hackathon for the Israel Defense Forces Medical Corps.\r\nResearch interests\r\nMy main research interest is cardiology. However, I love to clean and wrangle data of all sorts so you can find my name on publications in tactical medicine, rheumatology, endocrinology, and even obstetrics.\r\nPersonal\r\n\r\nI’m married to Miriam and a father to Barack.\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-08-06T13:49:26+03:00"
     },
     {
       "path": "index.html",
       "title": "Avishai M Tsur",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-15T21:53:54+03:00"
+      "last_modified": "2021-08-06T13:49:27+03:00"
     },
     {
       "path": "publications.html",
@@ -20,7 +20,7 @@
       "description": "List of publications",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-15T21:53:55+03:00"
+      "last_modified": "2021-08-06T13:49:27+03:00"
     }
   ],
   "collections": ["posts/posts.json"]
