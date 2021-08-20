@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["Data/DrivingdataAll.xlsx","replicating-a-fraud-detection_files/anchor-4.2.2/anchor.min.js","replicating-a-fraud-detection_files/bowser-1.9.3/bowser.min.js","replicating-a-fraud-detection_files/distill-2.2.21/template.v2.js","replicating-a-fraud-detection_files/figure-html5/unnamed-chunk-12-1.png","replicating-a-fraud-detection_files/figure-html5/unnamed-chunk-13-1.png","replicating-a-fraud-detection_files/figure-html5/unnamed-chunk-14-1.png","replicating-a-fraud-detection_files/figure-html5/unnamed-chunk-5-1.png","replicating-a-fraud-detection_files/figure-html5/unnamed-chunk-6-1.png","replicating-a-fraud-detection_files/figure-html5/unnamed-chunk-7-1.png","replicating-a-fraud-detection_files/header-attrs-2.10/header-attrs.js","replicating-a-fraud-detection_files/jquery-1.11.3/jquery.min.js","replicating-a-fraud-detection_files/popper-2.6.0/popper.min.js","replicating-a-fraud-detection_files/tippy-6.2.7/tippy-bundle.umd.min.js","replicating-a-fraud-detection_files/tippy-6.2.7/tippy-light-border.css","replicating-a-fraud-detection_files/tippy-6.2.7/tippy.css","replicating-a-fraud-detection_files/tippy-6.2.7/tippy.umd.min.js","replicating-a-fraud-detection_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["Data/DrivingdataAll.xlsx","replicating-a-fraud-detection_files/anchor-4.2.2/anchor.min.js","replicating-a-fraud-detection_files/bowser-1.9.3/bowser.min.js","replicating-a-fraud-detection_files/distill-2.2.21/template.v2.js","replicating-a-fraud-detection_files/figure-html5/unnamed-chunk-12-1.png","replicating-a-fraud-detection_files/figure-html5/unnamed-chunk-13-1.png","replicating-a-fraud-detection_files/figure-html5/unnamed-chunk-14-1.png","replicating-a-fraud-detection_files/figure-html5/unnamed-chunk-5-1.png","replicating-a-fraud-detection_files/figure-html5/unnamed-chunk-6-1.png","replicating-a-fraud-detection_files/figure-html5/unnamed-chunk-7-1.png","replicating-a-fraud-detection_files/header-attrs-2.10/header-attrs.js","replicating-a-fraud-detection_files/jquery-1.11.3/jquery.min.js","replicating-a-fraud-detection_files/pagedtable-1.1/css/pagedtable.css","replicating-a-fraud-detection_files/pagedtable-1.1/js/pagedtable.js","replicating-a-fraud-detection_files/popper-2.6.0/popper.min.js","replicating-a-fraud-detection_files/tippy-6.2.7/tippy-bundle.umd.min.js","replicating-a-fraud-detection_files/tippy-6.2.7/tippy-light-border.css","replicating-a-fraud-detection_files/tippy-6.2.7/tippy.css","replicating-a-fraud-detection_files/tippy-6.2.7/tippy.umd.min.js","replicating-a-fraud-detection_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2123,6 +2123,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 <li>I am not a psychologist, a fraud detection expert, nor business expert. My pure intention is to replicate the analysis for there to be an open-sourced code so others could replicate it as well and have a reference for future use.<br />
 </li>
+<li>The Datacoloda blog post authors shared their extensive code on <a href="https://researchbox.org/336">ResearchBox</a>. Here I share a code that focuses only on the specific visualizations with some tips and tricks of mine. If you find the analysis interesting, it would be no brainer that you should also look at their original code.<br />
+</li>
 <li>No part of this post suggests responsibility, bad intentions, or blame.<br />
 </li>
 <li>Mistakes happen all the time, even in this post.<br />
@@ -2176,7 +2178,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["arm"],"name":[1],"type":["chr"],"align":["left"]},{"label":["pid"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["car_1_pre"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["car_1_post"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["car_2_pre"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["car_2_post"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["car_3_pre"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["car_3_post"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["car_4_pre"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["car_4_post"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["avg_pre"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["avg_post"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["avg_diff"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["ind1"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["ind2"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["ind3"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["ind4"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["n_cars"],"name":[18],"type":["dbl"],"align":["right"]}],"data":[{"1":"Sign Top","2":"8544","3":"72000","4":"99649","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"72000","12":"99649.0","13":"27649.0","14":"1","15":"0","16":"0","17":"0","18":"1"},{"1":"Sign Bottom","2":"5969","3":"70837","4":"118704","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"70837","12":"118704.0","13":"47867.0","14":"1","15":"0","16":"0","17":"0","18":"1"},{"1":"Sign Bottom","2":"11640","3":"50","4":"628","5":"60998","6":"62753","7":"NA","8":"NA","9":"NA","10":"NA","11":"30524","12":"31690.5","13":"1166.5","14":"1","15":"1","16":"0","17":"0","18":"2"},{"1":"Sign Bottom","2":"12469","3":"93755","4":"138380","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"93755","12":"138380.0","13":"44625.0","14":"1","15":"0","16":"0","17":"0","18":"1"},{"1":"Sign Top","2":"4409","3":"192300","4":"197050","5":"125250","6":"144597","7":"NA","8":"NA","9":"NA","10":"NA","11":"158775","12":"170823.5","13":"12048.5","14":"1","15":"1","16":"0","17":"0","18":"2"},{"1":"Sign Top","2":"13091","3":"514","4":"30060","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"514","12":"30060.0","13":"29546.0","14":"1","15":"0","16":"0","17":"0","18":"1"},{"1":"Sign Top","2":"8413","3":"20471","4":"22190","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"20471","12":"22190.0","13":"1719.0","14":"1","15":"0","16":"0","17":"0","18":"1"},{"1":"Sign Bottom","2":"5984","3":"47004","4":"54799","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"47004","12":"54799.0","13":"7795.0","14":"1","15":"0","16":"0","17":"0","18":"1"},{"1":"Sign Top","2":"9198","3":"19485","4":"58663","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"19485","12":"58663.0","13":"39178.0","14":"1","15":"0","16":"0","17":"0","18":"1"},{"1":"Sign Bottom","2":"13338","3":"98841","4":"144440","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"98841","12":"144440.0","13":"45599.0","14":"1","15":"0","16":"0","17":"0","18":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["arm"],"name":[1],"type":["chr"],"align":["left"]},{"label":["pid"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["car_1_pre"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["car_1_post"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["car_2_pre"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["car_2_post"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["car_3_pre"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["car_3_post"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["car_4_pre"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["car_4_post"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["avg_pre"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["avg_post"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["avg_diff"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["ind1"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["ind2"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["ind3"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["ind4"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["n_cars"],"name":[18],"type":["dbl"],"align":["right"]}],"data":[{"1":"Sign Bottom","2":"4401","3":"150246","4":"167815","5":"130295","6":"159497","7":"NA","8":"NA","9":"NA","10":"NA","11":"140270.5","12":"163656.0","13":"23385.5","14":"1","15":"1","16":"0","17":"0","18":"2"},{"1":"Sign Bottom","2":"3036","3":"95676","4":"144820","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"95676.0","12":"144820.0","13":"49144.0","14":"1","15":"0","16":"0","17":"0","18":"1"},{"1":"Sign Top","2":"10962","3":"148312","4":"194604","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"148312.0","12":"194604.0","13":"46292.0","14":"1","15":"0","16":"0","17":"0","18":"1"},{"1":"Sign Bottom","2":"5054","3":"58345","4":"106842","5":"52417","6":"56813","7":"NA","8":"NA","9":"NA","10":"NA","11":"55381.0","12":"81827.5","13":"26446.5","14":"1","15":"1","16":"0","17":"0","18":"2"},{"1":"Sign Bottom","2":"12333","3":"84457","4":"128501","5":"38217","6":"61265","7":"NA","8":"NA","9":"NA","10":"NA","11":"61337.0","12":"94883.0","13":"33546.0","14":"1","15":"1","16":"0","17":"0","18":"2"},{"1":"Sign Bottom","2":"13150","3":"57868","4":"84253","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"57868.0","12":"84253.0","13":"26385.0","14":"1","15":"0","16":"0","17":"0","18":"1"},{"1":"Sign Bottom","2":"2738","3":"59013","4":"83933","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"59013.0","12":"83933.0","13":"24920.0","14":"1","15":"0","16":"0","17":"0","18":"1"},{"1":"Sign Top","2":"3994","3":"71295","4":"109348","5":"38140","6":"61183","7":"NA","8":"NA","9":"NA","10":"NA","11":"54717.5","12":"85265.5","13":"30548.0","14":"1","15":"1","16":"0","17":"0","18":"2"},{"1":"Sign Bottom","2":"7690","3":"32401","4":"61426","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"32401.0","12":"61426.0","13":"29025.0","14":"1","15":"0","16":"0","17":"0","18":"1"},{"1":"Sign Top","2":"6342","3":"63000","4":"105179","5":"NA","6":"NA","7":"0","8":"16457","9":"NA","10":"NA","11":"31500.0","12":"60818.0","13":"29318.0","14":"1","15":"0","16":"1","17":"0","18":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2192,12 +2194,12 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
     <span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/add_p.html'>add_p</a></span><span class='op'>(</span>test <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/select_helpers.html'>all_continuous</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"t.test"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
-<div id="affxydzdzu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="dtecshnxcg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#affxydzdzu .gt_table {
+#dtecshnxcg .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2222,7 +2224,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   border-left-color: #D3D3D3;
 }
 
-#affxydzdzu .gt_heading {
+#dtecshnxcg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2234,7 +2236,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   border-right-color: #D3D3D3;
 }
 
-#affxydzdzu .gt_title {
+#dtecshnxcg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2244,7 +2246,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   border-bottom-width: 0;
 }
 
-#affxydzdzu .gt_subtitle {
+#dtecshnxcg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2254,13 +2256,13 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   border-top-width: 0;
 }
 
-#affxydzdzu .gt_bottom_border {
+#dtecshnxcg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#affxydzdzu .gt_col_headings {
+#dtecshnxcg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2275,7 +2277,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   border-right-color: #D3D3D3;
 }
 
-#affxydzdzu .gt_col_heading {
+#dtecshnxcg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2295,7 +2297,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   overflow-x: hidden;
 }
 
-#affxydzdzu .gt_column_spanner_outer {
+#dtecshnxcg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2307,15 +2309,15 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   padding-right: 4px;
 }
 
-#affxydzdzu .gt_column_spanner_outer:first-child {
+#dtecshnxcg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#affxydzdzu .gt_column_spanner_outer:last-child {
+#dtecshnxcg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#affxydzdzu .gt_column_spanner {
+#dtecshnxcg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2327,7 +2329,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   width: 100%;
 }
 
-#affxydzdzu .gt_group_heading {
+#dtecshnxcg .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2349,7 +2351,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   vertical-align: middle;
 }
 
-#affxydzdzu .gt_empty_group_heading {
+#dtecshnxcg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2364,15 +2366,15 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   vertical-align: middle;
 }
 
-#affxydzdzu .gt_from_md > :first-child {
+#dtecshnxcg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#affxydzdzu .gt_from_md > :last-child {
+#dtecshnxcg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#affxydzdzu .gt_row {
+#dtecshnxcg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2391,7 +2393,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   overflow-x: hidden;
 }
 
-#affxydzdzu .gt_stub {
+#dtecshnxcg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2403,7 +2405,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   padding-left: 12px;
 }
 
-#affxydzdzu .gt_summary_row {
+#dtecshnxcg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2413,7 +2415,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   padding-right: 5px;
 }
 
-#affxydzdzu .gt_first_summary_row {
+#dtecshnxcg .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2423,7 +2425,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   border-top-color: #D3D3D3;
 }
 
-#affxydzdzu .gt_grand_summary_row {
+#dtecshnxcg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2433,7 +2435,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   padding-right: 5px;
 }
 
-#affxydzdzu .gt_first_grand_summary_row {
+#dtecshnxcg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2443,11 +2445,11 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   border-top-color: #D3D3D3;
 }
 
-#affxydzdzu .gt_striped {
+#dtecshnxcg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#affxydzdzu .gt_table_body {
+#dtecshnxcg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2456,7 +2458,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   border-bottom-color: #D3D3D3;
 }
 
-#affxydzdzu .gt_footnotes {
+#dtecshnxcg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2470,13 +2472,13 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   border-right-color: #D3D3D3;
 }
 
-#affxydzdzu .gt_footnote {
+#dtecshnxcg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#affxydzdzu .gt_sourcenotes {
+#dtecshnxcg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2490,41 +2492,41 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
   border-right-color: #D3D3D3;
 }
 
-#affxydzdzu .gt_sourcenote {
+#dtecshnxcg .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#affxydzdzu .gt_left {
+#dtecshnxcg .gt_left {
   text-align: left;
 }
 
-#affxydzdzu .gt_center {
+#dtecshnxcg .gt_center {
   text-align: center;
 }
 
-#affxydzdzu .gt_right {
+#dtecshnxcg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#affxydzdzu .gt_font_normal {
+#dtecshnxcg .gt_font_normal {
   font-weight: normal;
 }
 
-#affxydzdzu .gt_font_bold {
+#dtecshnxcg .gt_font_bold {
   font-weight: bold;
 }
 
-#affxydzdzu .gt_font_italic {
+#dtecshnxcg .gt_font_italic {
   font-style: italic;
 }
 
-#affxydzdzu .gt_super {
+#dtecshnxcg .gt_super {
   font-size: 65%;
 }
 
-#affxydzdzu .gt_footnote_marks {
+#dtecshnxcg .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -2601,7 +2603,7 @@ As you will see later, for technical reasons I opened the file in MS Excel and s
 </div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["arm"],"name":[1],"type":["chr"],"align":["left"]},{"label":["pid"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["car_num"],"name":[3],"type":["chr"],"align":["left"]},{"label":["period"],"name":[4],"type":["fct"],"align":["left"]},{"label":["miles"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Sign Bottom","2":"2369","3":"Car 1","4":"Post","5":"65579"},{"1":"Sign Top","2":"776","3":"Car 1","4":"Post","5":"45274"},{"1":"Sign Top","2":"4708","3":"Car 2","4":"Pre","5":"15000"},{"1":"Sign Top","2":"8368","3":"Car 1","4":"Post","5":"9800"},{"1":"Sign Top","2":"7183","3":"Car 2","4":"Pre","5":"14262"},{"1":"Sign Top","2":"7027","3":"Car 3","4":"Pre","5":"46547"},{"1":"Sign Bottom","2":"12005","3":"Car 1","4":"Pre","5":"111000"},{"1":"Sign Bottom","2":"2401","3":"Car 2","4":"Pre","5":"125876"},{"1":"Sign Bottom","2":"7553","3":"Car 4","4":"Post","5":"197735"},{"1":"Sign Top","2":"917","3":"Car 3","4":"Pre","5":"26"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["arm"],"name":[1],"type":["chr"],"align":["left"]},{"label":["pid"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["car_num"],"name":[3],"type":["chr"],"align":["left"]},{"label":["period"],"name":[4],"type":["fct"],"align":["left"]},{"label":["miles"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Sign Top","2":"825","3":"Car 1","4":"Post","5":"161342"},{"1":"Sign Top","2":"4559","3":"Car 1","4":"Post","5":"36298"},{"1":"Sign Bottom","2":"11628","3":"Car 1","4":"Post","5":"85618"},{"1":"Sign Bottom","2":"13471","3":"Car 1","4":"Pre","5":"143885"},{"1":"Sign Bottom","2":"12274","3":"Car 1","4":"Pre","5":"98914"},{"1":"Sign Top","2":"4161","3":"Car 2","4":"Post","5":"20855"},{"1":"Sign Bottom","2":"3595","3":"Car 2","4":"Pre","5":"202869"},{"1":"Sign Top","2":"7124","3":"Car 1","4":"Pre","5":"20766"},{"1":"Sign Top","2":"9938","3":"Car 1","4":"Pre","5":"90352"},{"1":"Sign Top","2":"11432","3":"Car 2","4":"Post","5":"119166"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>

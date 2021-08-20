@@ -36,6 +36,7 @@ If you are an [Rstats](https://www.r-project.org/) user, I hope for you this wou
 ## A few important disclaimers
 - It is highly suggested to read the Datacolada blog post first and keep it open while reading this.  
 - I am not a psychologist, a fraud detection expert, nor business expert. My pure intention is to replicate the analysis for there to be an open-sourced code so others could replicate it as well and have a reference for future use.  
+- The Datacoloda blog post authors shared their extensive code on [ResearchBox](https://researchbox.org/336). Here I share a code that focuses only on the specific visualizations with some tips and tricks of mine. If you find the analysis interesting, it would be no brainer that you should also look at their original code.   
 - No part of this post suggests responsibility, bad intentions, or blame.  
 - Mistakes happen all the time, even in this post.  
 - The replication is not a full replication, but of the main findings.
