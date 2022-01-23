@@ -1,0 +1,64 @@
+---
+title: "Ten less known yet time-saving tidyverse functions"
+description: |
+  Easy to miss, hard to forget.
+author:
+  - name: Avishai M Tsur
+    url: {}
+date: 2022-01-23
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, message = F, error = F, warning = F)
+library(tidyverse)
+set.seed(2022)
+```
+
+```{r, echo = F}
+knitr::include_graphics("https://github.com/allisonhorst/allisonhorst/raw/main/horst_rtist.png")
+```
+
+
+# Introduction
+
+Throughout the years, we become more fluent using R. However, like in any language, use of accurate words (functions in this case) can shorten, clarify, and save a lot of time in communicating code or insights.
+
+The purpose of this post is to summarize a few functions learned the hard way, to be used a reference for me, and maybe allow you to discover some new function or new use cases for functions you already know.
+
+# Data
+
+For demonstrating purposes, we will use data from the tidytuesday project regarding Chocolate Ratings.
+
+```{r}
+chocolate <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-01-18/chocolate.csv')
+
+skimr::skim(chocolate)
+```
+
+# separate_rows()
+
+As you may have noticed, the most memorable characteristics of a chocolate are organized in a string with multiple characteristics separated by commas.
+
+```{r}
+chocolate %>% sample_n(10) %>% pull(most_memorable_characteristics) 
+```
+
+Often, we would like to "unlist" those characteristics, maybe to understand how people describe chocolate. One way of doing this is using 'separate()'. However, this poses an inconvenience when the number of objects in the list is unknown or variable. 'separate_rows()' simplifies the process.
+
+```{r}
+chocolate_separated <- chocolate %>% 
+    select(most_memorable_characteristics) %>% 
+    separate_rows(most_memorable_characteristics, sep = ", ") 
+```
+
+This makes counting easy.
+
+```{r}
+chocolate_separated %>% 
+    count(most_memorable_characteristics, sort = T) %>% 
+    head(10)
+```
+
