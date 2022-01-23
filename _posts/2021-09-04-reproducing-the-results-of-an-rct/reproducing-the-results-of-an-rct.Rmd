@@ -291,3 +291,6 @@ lar %>%
 1.  Labeling a `ggplot`, or in this case a `ggsurvplot`, for commiunication can lead to unintentional errors. One way to avoid it is to produce the labels programmatically instead of manually (see Figure 2).
 2.  `skimr::skim()` is extremely valuable in exposing datasets problem fast.
 3.  `labelled::set_variable_labels` allows assigning labels once to be used in multiple tables.
+
+
+

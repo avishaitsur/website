@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
 <title>Avishai M Tsur: Reproducing the results of an RCT</title>
@@ -117,7 +118,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["Data/RCT Survival.png","reproducing-the-results-of-an-rct_files/anchor-4.2.2/anchor.min.js","reproducing-the-results-of-an-rct_files/bowser-1.9.3/bowser.min.js","reproducing-the-results-of-an-rct_files/distill-2.2.21/template.v2.js","reproducing-the-results-of-an-rct_files/figure-html5/fig2-1.png","reproducing-the-results-of-an-rct_files/figure-html5/unnamed-chunk-6-1.png","reproducing-the-results-of-an-rct_files/figure-html5/unnamed-chunk-7-1.png","reproducing-the-results-of-an-rct_files/header-attrs-2.10/header-attrs.js","reproducing-the-results-of-an-rct_files/jquery-1.11.3/jquery.min.js","reproducing-the-results-of-an-rct_files/popper-2.6.0/popper.min.js","reproducing-the-results-of-an-rct_files/tippy-6.2.7/tippy-bundle.umd.min.js","reproducing-the-results-of-an-rct_files/tippy-6.2.7/tippy-light-border.css","reproducing-the-results-of-an-rct_files/tippy-6.2.7/tippy.css","reproducing-the-results-of-an-rct_files/tippy-6.2.7/tippy.umd.min.js","reproducing-the-results-of-an-rct_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["Data/RCT Survival.png","reproducing-the-results-of-an-rct_files/anchor-4.2.2/anchor.min.js","reproducing-the-results-of-an-rct_files/bowser-1.9.3/bowser.min.js","reproducing-the-results-of-an-rct_files/distill-2.2.21/template.v2.js","reproducing-the-results-of-an-rct_files/figure-html5/fig2-1.png","reproducing-the-results-of-an-rct_files/figure-html5/unnamed-chunk-6-1.png","reproducing-the-results-of-an-rct_files/figure-html5/unnamed-chunk-7-1.png","reproducing-the-results-of-an-rct_files/header-attrs-2.10/header-attrs.js","reproducing-the-results-of-an-rct_files/header-attrs-2.11/header-attrs.js","reproducing-the-results-of-an-rct_files/jquery-1.11.3/jquery.min.js","reproducing-the-results-of-an-rct_files/jquery-3.6.0/jquery-3.6.0.js","reproducing-the-results-of-an-rct_files/jquery-3.6.0/jquery-3.6.0.min.js","reproducing-the-results-of-an-rct_files/jquery-3.6.0/jquery-3.6.0.min.map","reproducing-the-results-of-an-rct_files/popper-2.6.0/popper.min.js","reproducing-the-results-of-an-rct_files/tippy-6.2.7/tippy-bundle.umd.min.js","reproducing-the-results-of-an-rct_files/tippy-6.2.7/tippy-light-border.css","reproducing-the-results-of-an-rct_files/tippy-6.2.7/tippy.css","reproducing-the-results-of-an-rct_files/tippy-6.2.7/tippy.umd.min.js","reproducing-the-results-of-an-rct_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2044,8 +2045,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.10/header-attrs.js"></script>
-  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2135,7 +2136,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"medicaldata"</span><span class='op'>)</span>
 
-<span class='fu'>medicaldata</span><span class='fu'>::</span><span class='va'><a href='https://higgi13425.github.io/medicaldata//reference/laryngoscope.html'>laryngoscope</a></span>
+<span class='fu'>medicaldata</span><span class='fu'>::</span><span class='va'><a href='https://higgi13425.github.io/medicaldata/reference/laryngoscope.html'>laryngoscope</a></span>
 </code></pre>
 </div>
 </div>
@@ -2162,7 +2163,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>The <code>laryngoscope</code> dataset appears in a data.frame. A first step would be to load it as a tibble for better printing properties (e.g., highlighting missing values, presenting variable types).</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lar_raw</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span><span class='op'>(</span><span class='fu'>medicaldata</span><span class='fu'>::</span><span class='va'><a href='https://higgi13425.github.io/medicaldata//reference/laryngoscope.html'>laryngoscope</a></span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lar_raw</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span><span class='op'>(</span><span class='fu'>medicaldata</span><span class='fu'>::</span><span class='va'><a href='https://higgi13425.github.io/medicaldata/reference/laryngoscope.html'>laryngoscope</a></span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2525,17 +2526,17 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>The function <code>as.roman</code> is used to translate numbers to Roman numerals, <code>set_variable_labels</code> is a simple way to assign labels once that would appear in all tables created by <code>gtsummary</code> later.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lar</span> <span class='op'>&lt;-</span> <span class='va'>lar_raw</span> <span class='op'>%&gt;%</span> 
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lar</span> <span class='op'>&lt;-</span> <span class='va'>lar_raw</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
     <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>male <span class='op'>=</span> <span class='va'>gender</span> <span class='op'>==</span> <span class='fl'>1</span>,
-           laryngoscope <span class='op'>=</span> <span class='fu'>if_else</span><span class='op'>(</span>
+           laryngoscope <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span>
                <span class='va'>Randomization</span> <span class='op'>==</span> <span class='fl'>0</span>, 
                <span class='st'>"MacIntosh"</span>, 
-               <span class='st'>"Pentax AWS"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-               <span class='fu'>fct_rev</span><span class='op'>(</span><span class='op'>)</span>,
+               <span class='st'>"Pentax AWS"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+               <span class='fu'><a href='https://forcats.tidyverse.org/reference/fct_rev.html'>fct_rev</a></span><span class='op'>(</span><span class='op'>)</span>,
            asa_roman <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/utils/roman.html'>as.roman</a></span><span class='op'>(</span><span class='va'>asa</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>,
            sore_throat_fct <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>sore_throat</span>, <span class='fl'>0</span><span class='op'>:</span><span class='fl'>3</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"None"</span>, <span class='st'>"Mild"</span>, <span class='st'>"Moderate"</span>, <span class='st'>"Severe"</span><span class='op'>)</span>, ordered <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,
            Mallampati_fct <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>Mallampati</span>, ordered <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>
-           <span class='op'>)</span> <span class='op'>%&gt;%</span> 
+           <span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
     <span class='fu'><a href='http://larmarange.github.io/labelled/reference/var_label.html'>set_variable_labels</a></span><span class='op'>(</span>
         age <span class='op'>=</span> <span class='st'>"Age, years"</span>,
         male <span class='op'>=</span> <span class='st'>"Males"</span>,
@@ -2570,24 +2571,24 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>Regarding the results, note that the mean BMI in the Pentax AWS group is slightly different that in the article. Assuming we have the same dataset, this is likely a typing error – another reason to use R ± R Markdown to produce the publication-ready results. Also, two missing values of BMI are not mentioned in the table (unlike the one patient with missing Mallampati score), but can be seen clearly in the default <code>tbl_summary</code> output.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lar</span> <span class='op'>%&gt;%</span> 
-    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>laryngoscope</span>, <span class='va'>age</span>, <span class='va'>male</span>, <span class='va'>BMI</span>, <span class='va'>asa_roman</span>, <span class='va'>Mallampati_fct</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-    <span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/tbl_summary.html'>tbl_summary</a></span><span class='op'>(</span>by <span class='op'>=</span> <span class='st'>"laryngoscope"</span>, 
-                statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/select_helpers.html'>all_continuous</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"{mean} ({sd})"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-    <span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/add_stat.html'>add_stat</a></span><span class='op'>(</span>fns <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-        <span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/select_helpers.html'>all_continuous</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"get_smd"</span>,
-        <span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/select_helpers.html'>all_categorical</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"get_smd"</span><span class='op'>)</span>
-        <span class='op'>)</span> <span class='op'>%&gt;%</span> 
-    <span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/modify.html'>modify_header</a></span><span class='op'>(</span><span class='va'>estimate</span> <span class='op'>~</span> <span class='st'>"Standardized difference"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-    <span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/modify_fmt_fun.html'>modify_fmt_fun</a></span><span class='op'>(</span>update <span class='op'>=</span> <span class='va'>estimate</span> <span class='op'>~</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>{</span><span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/number.html'>number</a></span><span class='op'>(</span><span class='va'>x</span>, accuracy <span class='op'>=</span> <span class='fl'>0.01</span><span class='op'>)</span><span class='op'>}</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lar</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>laryngoscope</span>, <span class='va'>age</span>, <span class='va'>male</span>, <span class='va'>BMI</span>, <span class='va'>asa_roman</span>, <span class='va'>Mallampati_fct</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'><a href='https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html'>tbl_summary</a></span><span class='op'>(</span>by <span class='op'>=</span> <span class='st'>"laryngoscope"</span>, 
+                statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fu'><a href='https://www.danieldsjoberg.com/gtsummary/reference/select_helpers.html'>all_continuous</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"{mean} ({sd})"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'><a href='https://www.danieldsjoberg.com/gtsummary/reference/add_stat.html'>add_stat</a></span><span class='op'>(</span>fns <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+        <span class='fu'><a href='https://www.danieldsjoberg.com/gtsummary/reference/select_helpers.html'>all_continuous</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"get_smd"</span>,
+        <span class='fu'><a href='https://www.danieldsjoberg.com/gtsummary/reference/select_helpers.html'>all_categorical</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>~</span> <span class='st'>"get_smd"</span><span class='op'>)</span>
+        <span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'><a href='https://www.danieldsjoberg.com/gtsummary/reference/modify.html'>modify_header</a></span><span class='op'>(</span><span class='va'>estimate</span> <span class='op'>~</span> <span class='st'>"Standardized difference"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'><a href='https://www.danieldsjoberg.com/gtsummary/reference/modify_fmt_fun.html'>modify_fmt_fun</a></span><span class='op'>(</span>update <span class='op'>=</span> <span class='va'>estimate</span> <span class='op'>~</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>{</span><span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/number.html'>number</a></span><span class='op'>(</span><span class='va'>x</span>, accuracy <span class='op'>=</span> <span class='fl'>0.01</span><span class='op'>)</span><span class='op'>}</span><span class='op'>)</span>
 </code></pre>
 </div>
-<div id="zhigbdabae" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="mzkhwjmcct" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#zhigbdabae .gt_table {
+#mzkhwjmcct .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2612,7 +2613,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border-left-color: #D3D3D3;
 }
 
-#zhigbdabae .gt_heading {
+#mzkhwjmcct .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2624,7 +2625,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border-right-color: #D3D3D3;
 }
 
-#zhigbdabae .gt_title {
+#mzkhwjmcct .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2634,7 +2635,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border-bottom-width: 0;
 }
 
-#zhigbdabae .gt_subtitle {
+#mzkhwjmcct .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2644,13 +2645,13 @@ document.addEventListener('DOMContentLoaded', function() {
   border-top-width: 0;
 }
 
-#zhigbdabae .gt_bottom_border {
+#mzkhwjmcct .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zhigbdabae .gt_col_headings {
+#mzkhwjmcct .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2665,7 +2666,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border-right-color: #D3D3D3;
 }
 
-#zhigbdabae .gt_col_heading {
+#mzkhwjmcct .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2685,7 +2686,7 @@ document.addEventListener('DOMContentLoaded', function() {
   overflow-x: hidden;
 }
 
-#zhigbdabae .gt_column_spanner_outer {
+#mzkhwjmcct .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2697,15 +2698,15 @@ document.addEventListener('DOMContentLoaded', function() {
   padding-right: 4px;
 }
 
-#zhigbdabae .gt_column_spanner_outer:first-child {
+#mzkhwjmcct .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zhigbdabae .gt_column_spanner_outer:last-child {
+#mzkhwjmcct .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zhigbdabae .gt_column_spanner {
+#mzkhwjmcct .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2717,7 +2718,7 @@ document.addEventListener('DOMContentLoaded', function() {
   width: 100%;
 }
 
-#zhigbdabae .gt_group_heading {
+#mzkhwjmcct .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2739,7 +2740,7 @@ document.addEventListener('DOMContentLoaded', function() {
   vertical-align: middle;
 }
 
-#zhigbdabae .gt_empty_group_heading {
+#mzkhwjmcct .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2754,15 +2755,15 @@ document.addEventListener('DOMContentLoaded', function() {
   vertical-align: middle;
 }
 
-#zhigbdabae .gt_from_md > :first-child {
+#mzkhwjmcct .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zhigbdabae .gt_from_md > :last-child {
+#mzkhwjmcct .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zhigbdabae .gt_row {
+#mzkhwjmcct .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2781,7 +2782,7 @@ document.addEventListener('DOMContentLoaded', function() {
   overflow-x: hidden;
 }
 
-#zhigbdabae .gt_stub {
+#mzkhwjmcct .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2793,7 +2794,7 @@ document.addEventListener('DOMContentLoaded', function() {
   padding-left: 12px;
 }
 
-#zhigbdabae .gt_summary_row {
+#mzkhwjmcct .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2803,7 +2804,7 @@ document.addEventListener('DOMContentLoaded', function() {
   padding-right: 5px;
 }
 
-#zhigbdabae .gt_first_summary_row {
+#mzkhwjmcct .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2813,7 +2814,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border-top-color: #D3D3D3;
 }
 
-#zhigbdabae .gt_grand_summary_row {
+#mzkhwjmcct .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2823,7 +2824,7 @@ document.addEventListener('DOMContentLoaded', function() {
   padding-right: 5px;
 }
 
-#zhigbdabae .gt_first_grand_summary_row {
+#mzkhwjmcct .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2833,11 +2834,11 @@ document.addEventListener('DOMContentLoaded', function() {
   border-top-color: #D3D3D3;
 }
 
-#zhigbdabae .gt_striped {
+#mzkhwjmcct .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zhigbdabae .gt_table_body {
+#mzkhwjmcct .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2846,7 +2847,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border-bottom-color: #D3D3D3;
 }
 
-#zhigbdabae .gt_footnotes {
+#mzkhwjmcct .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2860,13 +2861,13 @@ document.addEventListener('DOMContentLoaded', function() {
   border-right-color: #D3D3D3;
 }
 
-#zhigbdabae .gt_footnote {
+#mzkhwjmcct .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#zhigbdabae .gt_sourcenotes {
+#mzkhwjmcct .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2880,41 +2881,41 @@ document.addEventListener('DOMContentLoaded', function() {
   border-right-color: #D3D3D3;
 }
 
-#zhigbdabae .gt_sourcenote {
+#mzkhwjmcct .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#zhigbdabae .gt_left {
+#mzkhwjmcct .gt_left {
   text-align: left;
 }
 
-#zhigbdabae .gt_center {
+#mzkhwjmcct .gt_center {
   text-align: center;
 }
 
-#zhigbdabae .gt_right {
+#mzkhwjmcct .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zhigbdabae .gt_font_normal {
+#mzkhwjmcct .gt_font_normal {
   font-weight: normal;
 }
 
-#zhigbdabae .gt_font_bold {
+#mzkhwjmcct .gt_font_bold {
   font-weight: bold;
 }
 
-#zhigbdabae .gt_font_italic {
+#mzkhwjmcct .gt_font_italic {
   font-style: italic;
 }
 
-#zhigbdabae .gt_super {
+#mzkhwjmcct .gt_super {
   font-size: 65%;
 }
 
-#zhigbdabae .gt_footnote_marks {
+#mzkhwjmcct .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -3012,9 +3013,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cum_inc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/survminer/man/surv_fit.html'>surv_fit</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/survival/man/Surv.html'>Surv</a></span><span class='op'>(</span><span class='va'>total_intubation_time</span>, <span class='va'>intubation_overall_S_F</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>laryngoscope</span>, data <span class='op'>=</span> <span class='va'>lar</span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>cum_inc</span><span class='op'>$</span><span class='va'>strata</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>cum_inc</span><span class='op'>$</span><span class='va'>strata</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>str_remove</span><span class='op'>(</span><span class='st'>"laryngoscope="</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>cum_inc</span><span class='op'>$</span><span class='va'>strata</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>cum_inc</span><span class='op'>$</span><span class='va'>strata</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_remove.html'>str_remove</a></span><span class='op'>(</span><span class='st'>"laryngoscope="</span><span class='op'>)</span>
 
-<span class='va'>cum_inc</span> <span class='op'>%&gt;%</span> 
+<span class='va'>cum_inc</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
     <span class='fu'><a href='https://rdrr.io/pkg/survminer/man/ggsurvplot.html'>ggsurvplot</a></span><span class='op'>(</span>fun <span class='op'>=</span> <span class='st'>"event"</span>, conf.int <span class='op'>=</span> <span class='cn'>T</span>, pval <span class='op'>=</span> <span class='cn'>T</span>,
                risk.table <span class='op'>=</span> <span class='cn'>T</span>, surv.median.line <span class='op'>=</span> <span class='st'>"hv"</span>,
                xlab <span class='op'>=</span> <span class='st'>"Total Intubation Time (s)"</span>,
@@ -3036,8 +3037,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>get_fe</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>variable</span>, <span class='va'>by</span>, <span class='va'>...</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='fu'><a href='https://rdrr.io/r/stats/fisher.test.html'>fisher.test</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>[[</span><span class='va'>variable</span><span class='op'>]</span><span class='op'>]</span>, <span class='va'>data</span><span class='op'>[[</span><span class='va'>by</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-        <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+    <span class='fu'><a href='https://rdrr.io/r/stats/fisher.test.html'>fisher.test</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>[[</span><span class='va'>variable</span><span class='op'>]</span><span class='op'>]</span>, <span class='va'>data</span><span class='op'>[[</span><span class='va'>by</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
         <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>estimate <span class='op'>=</span> <span class='cn'>NA_real_</span>,
                   conf.low <span class='op'>=</span> <span class='cn'>NA_real_</span>,
                   conf.high <span class='op'>=</span> <span class='cn'>NA_real_</span>,
@@ -3051,12 +3052,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>get_hr</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>variable</span>, <span class='va'>by</span>, <span class='va'>...</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='va'>data</span> <span class='op'>&lt;-</span> <span class='va'>lar</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>laryngoscope <span class='op'>=</span> <span class='fu'>fct_rev</span><span class='op'>(</span><span class='va'>laryngoscope</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='va'>data</span> <span class='op'>&lt;-</span> <span class='va'>lar</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>laryngoscope <span class='op'>=</span> <span class='fu'><a href='https://forcats.tidyverse.org/reference/fct_rev.html'>fct_rev</a></span><span class='op'>(</span><span class='va'>laryngoscope</span><span class='op'>)</span><span class='op'>)</span>
     <span class='fu'><a href='https://rdrr.io/pkg/survival/man/coxph.html'>coxph</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/survival/man/Surv.html'>Surv</a></span><span class='op'>(</span><span class='va'>total_intubation_time</span>, <span class='va'>intubation_overall_S_F</span><span class='op'>)</span> <span class='op'>~</span> 
               <span class='va'>laryngoscope</span> <span class='op'>+</span> <span class='va'>asa_roman</span> <span class='op'>+</span> <span class='va'>Mallampati_fct</span>, 
-          data <span class='op'>=</span> <span class='va'>data</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-        <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span>exponentiate <span class='op'>=</span> <span class='cn'>T</span>, conf.int <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-        <span class='fu'>slice</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+          data <span class='op'>=</span> <span class='va'>data</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span>exponentiate <span class='op'>=</span> <span class='cn'>T</span>, conf.int <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/slice.html'>slice</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
         <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"Cox regression"</span><span class='op'>)</span>
 <span class='op'>}</span>
 </code></pre>
@@ -3066,29 +3067,29 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>get_ancova</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>variable</span>, <span class='va'>by</span>, <span class='va'>...</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='va'>mean_diff</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/t.test.html'>t.test</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>[[</span><span class='va'>variable</span><span class='op'>]</span><span class='op'>]</span> <span class='op'>~</span> <span class='va'>data</span><span class='op'>[[</span><span class='va'>by</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-        <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+    <span class='va'>mean_diff</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/t.test.html'>t.test</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>[[</span><span class='va'>variable</span><span class='op'>]</span><span class='op'>]</span> <span class='op'>~</span> <span class='va'>data</span><span class='op'>[[</span><span class='va'>by</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
         <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>estimate</span>, <span class='va'>conf.low</span>, <span class='va'>conf.high</span><span class='op'>)</span>
-    <span class='va'>p_val</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/aov.html'>aov</a></span><span class='op'>(</span><span class='va'>ease</span> <span class='op'>~</span> <span class='va'>laryngoscope</span> <span class='op'>+</span> <span class='va'>asa_roman</span> <span class='op'>+</span> <span class='va'>Mallampati_fct</span>, data <span class='op'>=</span> <span class='va'>lar</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-        <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span>conf.int <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-        <span class='fu'>slice</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
+    <span class='va'>p_val</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/aov.html'>aov</a></span><span class='op'>(</span><span class='va'>ease</span> <span class='op'>~</span> <span class='va'>laryngoscope</span> <span class='op'>+</span> <span class='va'>asa_roman</span> <span class='op'>+</span> <span class='va'>Mallampati_fct</span>, data <span class='op'>=</span> <span class='va'>lar</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span>conf.int <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/slice.html'>slice</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
     
-    <span class='fu'>bind_cols</span><span class='op'>(</span><span class='va'>mean_diff</span>, <span class='va'>p_val</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/bind.html'>bind_cols</a></span><span class='op'>(</span><span class='va'>mean_diff</span>, <span class='va'>p_val</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
         <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"ANCOVA"</span><span class='op'>)</span>
 <span class='op'>}</span>
 
 <span class='va'>get_glm</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>variable</span>, <span class='va'>by</span>, <span class='va'>...</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='va'>data</span> <span class='op'>&lt;-</span> <span class='va'>lar</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>laryngoscope <span class='op'>=</span> <span class='fu'>fct_rev</span><span class='op'>(</span><span class='va'>laryngoscope</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='va'>data</span> <span class='op'>&lt;-</span> <span class='va'>lar</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>laryngoscope <span class='op'>=</span> <span class='fu'><a href='https://forcats.tidyverse.org/reference/fct_rev.html'>fct_rev</a></span><span class='op'>(</span><span class='va'>laryngoscope</span><span class='op'>)</span><span class='op'>)</span>
     <span class='va'>data</span><span class='op'>$</span><span class='va'>outcome</span> <span class='op'>&lt;-</span> <span class='va'>data</span><span class='op'>[[</span><span class='va'>variable</span><span class='op'>]</span><span class='op'>]</span>
-    <span class='va'>data</span> <span class='op'>&lt;-</span> <span class='va'>data</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>outcome</span>, <span class='va'>laryngoscope</span>, <span class='va'>asa_roman</span>, <span class='va'>Mallampati_fct</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+    <span class='va'>data</span> <span class='op'>&lt;-</span> <span class='va'>data</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>outcome</span>, <span class='va'>laryngoscope</span>, <span class='va'>asa_roman</span>, <span class='va'>Mallampati_fct</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
         <span class='fu'><a href='https://rdrr.io/r/stats/na.fail.html'>na.omit</a></span><span class='op'>(</span><span class='op'>)</span>
     <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>outcome</span> <span class='op'>~</span> <span class='va'>laryngoscope</span> <span class='op'>+</span> 
             <span class='va'>asa_roman</span> <span class='op'>+</span> <span class='va'>Mallampati_fct</span>, 
         family <span class='op'>=</span> <span class='st'>"binomial"</span>,
         data <span class='op'>=</span> <span class='va'>data</span>
-        <span class='op'>)</span> <span class='op'>%&gt;%</span> 
-        <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span>exponentiate <span class='op'>=</span> <span class='cn'>T</span>, conf.int <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-        <span class='fu'>slice</span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+        <span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span>exponentiate <span class='op'>=</span> <span class='cn'>T</span>, conf.int <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/slice.html'>slice</a></span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
         <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"Logistic regression"</span><span class='op'>)</span>
 <span class='op'>}</span>
 </code></pre>
@@ -3099,14 +3100,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>On purpose, we did not include here all treatment effects. I highly suggest you try writing functions for them yourself.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lar</span> <span class='op'>%&gt;%</span> 
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lar</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
     <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>laryngoscope</span>, <span class='va'>total_intubation_time</span>,
            <span class='va'>ease</span>, <span class='va'>attempt1_S_F</span>,
            <span class='va'>intubation_overall_S_F</span>, <span class='va'>attempts</span>, <span class='va'>view</span>, <span class='va'>bleeding</span>, <span class='va'>sore_throat_fct</span>
-           <span class='op'>)</span> <span class='op'>%&gt;%</span> 
-    <span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/tbl_summary.html'>tbl_summary</a></span><span class='op'>(</span>by <span class='op'>=</span> <span class='st'>"laryngoscope"</span>, statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>ease</span> <span class='op'>~</span> <span class='st'>"{mean} ({sd})"</span><span class='op'>)</span>
-                <span class='op'>)</span> <span class='op'>%&gt;%</span> 
-    <span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/add_difference.html'>add_difference</a></span><span class='op'>(</span>test <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+           <span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'><a href='https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html'>tbl_summary</a></span><span class='op'>(</span>by <span class='op'>=</span> <span class='st'>"laryngoscope"</span>, statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>ease</span> <span class='op'>~</span> <span class='st'>"{mean} ({sd})"</span><span class='op'>)</span>
+                <span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'><a href='https://www.danieldsjoberg.com/gtsummary/reference/add_difference.html'>add_difference</a></span><span class='op'>(</span>test <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
         <span class='va'>total_intubation_time</span> <span class='op'>~</span> <span class='st'>"get_hr"</span>,
         <span class='va'>ease</span> <span class='op'>~</span> <span class='st'>"get_ancova"</span>,
         <span class='va'>intubation_overall_S_F</span> <span class='op'>~</span> <span class='st'>"get_fe"</span>,
@@ -3116,12 +3117,12 @@ document.addEventListener('DOMContentLoaded', function() {
         <span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
-<div id="cyqllwrosu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="zywgtkqupt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#cyqllwrosu .gt_table {
+#zywgtkqupt .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3146,7 +3147,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border-left-color: #D3D3D3;
 }
 
-#cyqllwrosu .gt_heading {
+#zywgtkqupt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3158,7 +3159,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border-right-color: #D3D3D3;
 }
 
-#cyqllwrosu .gt_title {
+#zywgtkqupt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3168,7 +3169,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border-bottom-width: 0;
 }
 
-#cyqllwrosu .gt_subtitle {
+#zywgtkqupt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3178,13 +3179,13 @@ document.addEventListener('DOMContentLoaded', function() {
   border-top-width: 0;
 }
 
-#cyqllwrosu .gt_bottom_border {
+#zywgtkqupt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cyqllwrosu .gt_col_headings {
+#zywgtkqupt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3199,7 +3200,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border-right-color: #D3D3D3;
 }
 
-#cyqllwrosu .gt_col_heading {
+#zywgtkqupt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3219,7 +3220,7 @@ document.addEventListener('DOMContentLoaded', function() {
   overflow-x: hidden;
 }
 
-#cyqllwrosu .gt_column_spanner_outer {
+#zywgtkqupt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3231,15 +3232,15 @@ document.addEventListener('DOMContentLoaded', function() {
   padding-right: 4px;
 }
 
-#cyqllwrosu .gt_column_spanner_outer:first-child {
+#zywgtkqupt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cyqllwrosu .gt_column_spanner_outer:last-child {
+#zywgtkqupt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cyqllwrosu .gt_column_spanner {
+#zywgtkqupt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3251,7 +3252,7 @@ document.addEventListener('DOMContentLoaded', function() {
   width: 100%;
 }
 
-#cyqllwrosu .gt_group_heading {
+#zywgtkqupt .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3273,7 +3274,7 @@ document.addEventListener('DOMContentLoaded', function() {
   vertical-align: middle;
 }
 
-#cyqllwrosu .gt_empty_group_heading {
+#zywgtkqupt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3288,15 +3289,15 @@ document.addEventListener('DOMContentLoaded', function() {
   vertical-align: middle;
 }
 
-#cyqllwrosu .gt_from_md > :first-child {
+#zywgtkqupt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cyqllwrosu .gt_from_md > :last-child {
+#zywgtkqupt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cyqllwrosu .gt_row {
+#zywgtkqupt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3315,7 +3316,7 @@ document.addEventListener('DOMContentLoaded', function() {
   overflow-x: hidden;
 }
 
-#cyqllwrosu .gt_stub {
+#zywgtkqupt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3327,7 +3328,7 @@ document.addEventListener('DOMContentLoaded', function() {
   padding-left: 12px;
 }
 
-#cyqllwrosu .gt_summary_row {
+#zywgtkqupt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3337,7 +3338,7 @@ document.addEventListener('DOMContentLoaded', function() {
   padding-right: 5px;
 }
 
-#cyqllwrosu .gt_first_summary_row {
+#zywgtkqupt .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3347,7 +3348,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border-top-color: #D3D3D3;
 }
 
-#cyqllwrosu .gt_grand_summary_row {
+#zywgtkqupt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3357,7 +3358,7 @@ document.addEventListener('DOMContentLoaded', function() {
   padding-right: 5px;
 }
 
-#cyqllwrosu .gt_first_grand_summary_row {
+#zywgtkqupt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3367,11 +3368,11 @@ document.addEventListener('DOMContentLoaded', function() {
   border-top-color: #D3D3D3;
 }
 
-#cyqllwrosu .gt_striped {
+#zywgtkqupt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cyqllwrosu .gt_table_body {
+#zywgtkqupt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3380,7 +3381,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border-bottom-color: #D3D3D3;
 }
 
-#cyqllwrosu .gt_footnotes {
+#zywgtkqupt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3394,13 +3395,13 @@ document.addEventListener('DOMContentLoaded', function() {
   border-right-color: #D3D3D3;
 }
 
-#cyqllwrosu .gt_footnote {
+#zywgtkqupt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#cyqllwrosu .gt_sourcenotes {
+#zywgtkqupt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3414,41 +3415,41 @@ document.addEventListener('DOMContentLoaded', function() {
   border-right-color: #D3D3D3;
 }
 
-#cyqllwrosu .gt_sourcenote {
+#zywgtkqupt .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#cyqllwrosu .gt_left {
+#zywgtkqupt .gt_left {
   text-align: left;
 }
 
-#cyqllwrosu .gt_center {
+#zywgtkqupt .gt_center {
   text-align: center;
 }
 
-#cyqllwrosu .gt_right {
+#zywgtkqupt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cyqllwrosu .gt_font_normal {
+#zywgtkqupt .gt_font_normal {
   font-weight: normal;
 }
 
-#cyqllwrosu .gt_font_bold {
+#zywgtkqupt .gt_font_bold {
   font-weight: bold;
 }
 
-#cyqllwrosu .gt_font_italic {
+#zywgtkqupt .gt_font_italic {
   font-style: italic;
 }
 
-#cyqllwrosu .gt_super {
+#zywgtkqupt .gt_super {
   font-size: 65%;
 }
 
-#cyqllwrosu .gt_footnote_marks {
+#zywgtkqupt .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -3494,8 +3495,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <tr><td class="gt_row gt_left">No. of intubation attempts</td>
 <td class="gt_row gt_center"></td>
 <td class="gt_row gt_center"></td>
-<td class="gt_row gt_center"></td>
-<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">0.24</td>
+<td class="gt_row gt_center">-0.16, 0.63</td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">1</td>
 <td class="gt_row gt_center">44 (88%)</td>
@@ -3530,8 +3531,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <tr><td class="gt_row gt_left">Sore throat</td>
 <td class="gt_row gt_center"></td>
 <td class="gt_row gt_center"></td>
-<td class="gt_row gt_center"></td>
-<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center">0.23</td>
+<td class="gt_row gt_center">-0.17, 0.63</td>
 <td class="gt_row gt_center"></td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">None</td>
 <td class="gt_row gt_center">34 (68%)</td>
@@ -3581,7 +3582,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <em>2</em>
           </sup>
            
-          Cox regression; ANCOVA; Logistic regression; Fisher's Exact Test for Count Data
+          Cox regression; ANCOVA; Logistic regression; Fisher's Exact Test for Count Data; Standardized Mean Difference
           <br />
         </p>
         <p class="gt_footnote">

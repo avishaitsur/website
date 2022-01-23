@@ -14,19 +14,22 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = T, message = F, error = F, warning = F)
 library(tidyverse)
+library(patchwork)
+theme_set(theme_bw())
 set.seed(2022)
 ```
 
 ```{r, echo = F}
-knitr::include_graphics("https://github.com/allisonhorst/allisonhorst/raw/main/horst_rtist.png")
+knitr::include_graphics("Data/horst_rtist.png")
 ```
 
+Artwork by [Allison Horst](https://www.allisonhorst.com/)
 
 # Introduction
 
 Throughout the years, we become more fluent using R. However, like in any language, use of accurate words (functions in this case) can shorten, clarify, and save a lot of time in communicating code or insights.
 
-The purpose of this post is to summarize a few functions learned the hard way, to be used a reference for me, and maybe allow you to discover some new function or new use cases for functions you already know.
+The purpose of this post is to summarize a few functions learned the hard way, to be used a reference for me, and maybe allow you to discover some new functions or new use cases for functions you already know.
 
 # Data
 
@@ -38,27 +41,183 @@ chocolate <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/
 skimr::skim(chocolate)
 ```
 
-# separate_rows()
+# Wrangling
+
+## 1 - `separate_rows()`
 
 As you may have noticed, the most memorable characteristics of a chocolate are organized in a string with multiple characteristics separated by commas.
 
 ```{r}
+set.seed(2022)
 chocolate %>% sample_n(10) %>% pull(most_memorable_characteristics) 
 ```
 
-Often, we would like to "unlist" those characteristics, maybe to understand how people describe chocolate. One way of doing this is using 'separate()'. However, this poses an inconvenience when the number of objects in the list is unknown or variable. 'separate_rows()' simplifies the process.
+Often, we would like to "unlist" those characteristics, maybe to understand how people describe chocolate. One way of doing this is using `separate()`. However, this poses an inconvenience when the number of objects in the list is unknown or variable. 'separate_rows()' simplifies the process.
 
 ```{r}
 chocolate_separated <- chocolate %>% 
-    select(most_memorable_characteristics) %>% 
+    select(most_memorable_characteristics, rating) %>% 
     separate_rows(most_memorable_characteristics, sep = ", ") 
+
+chocolate_separated
 ```
 
-This makes counting easy.
+This makes finding the most used descriptions easy.
 
 ```{r}
-chocolate_separated %>% 
-    count(most_memorable_characteristics, sort = T) %>% 
-    head(10)
+chocolate_words <- chocolate_separated %>% 
+    group_by(most_memorable_characteristics) %>% 
+    summarize(n = n(), avg_rating = mean(rating)) 
+
+chocolate_words %>% 
+    top_n(10, n)
 ```
+
+## 2 - filter with `if_any()`, `if_all()`
+
+Another common problem is filtering across columns. One neat trick is to use `if_any()` and `if_all()`. Suppose we want to filter common words that also have a high avg_rating.
+
+```{r}
+chocolate_words %>% 
+    filter(if_all(n:avg_rating, ~.x > quantile(.x, 0.75))) %>% 
+    arrange(desc(avg_rating))
+```
+
+Or maybe, you want to filter words that are either common or have high average rating. 
+
+```{r}
+chocolate_words %>% 
+    filter(if_any(n:avg_rating, ~.x > quantile(.x, 0.75))) %>% 
+    arrange(desc(n))
+```
+
+These functions help a lot when dealing with many columns of similar properties. Especially if you work with questionnaires or questionnaires scores and want to see if multiple categories are true.
+
+## 3 - condition with `!x %in% y`
+
+One of the functions I love and use frequently is `%in%`. However, its negation is often not intuitive. [Some people](https://twitter.com/rfunctionaday/status/1363023605051850753) use packages to allow for a `%nin%` function, (others build their own function)[https://twitter.com/vishal_katti/status/1111712316649689088]. Maybe it is because I learned R before SQL, but I prefer not writing a function or using a package for just one function when I can use an existing syntax.
+
+```{r}
+chocolate %>% 
+    count(company_location, sort = T) %>% 
+    filter(!company_location %in% c("U.S.A.", "Canada", "France"))
+```
+
+## 4 - `count(.drop = F)` explicitly
+
+All credit to [Shannon Pileggi](https://twitter.com/PipingHotData/status/1483545443644555264) on this one. This allows to explicitly show all levels of a factor (or combinations of factors) when counting, even if it has zero occurrences.
+
+```{r}
+chocolate %>% 
+    mutate(across(c(company_location, country_of_bean_origin), factor)) %>% 
+    count(company_location, country_of_bean_origin, sort = T, .drop = F) %>% 
+    tail()
+```
+
+## 5 - `complete()` explicitly
+
+This one is similar to the `count(.drop = F)` trick, but allows us to fill the other columns in missing categories with whatever relevant values. Here for example it would be reasonable to fill the count with 0, but the rating with `NA`.
+
+```{r}
+set.seed(2022)
+
+chocolate_sample <- chocolate %>% 
+    group_by(company_location, country_of_bean_origin) %>% 
+    summarize(n = n(), avg_rating = mean(rating), .groups = "drop") %>% 
+    sample_n(2)
+
+chocolate_sample
+
+chocolate_sample %>% 
+    complete(company_location, country_of_bean_origin, 
+             fill = list(n = 0, rating = NA_real_))
+```
+
+# Visualizations
+
+Whenever visualizing multiple time-series, arranging the legend can be a pain. the usual `fct_reorder()` does not deliver here. No more. Notice the difference in the order.
+
+## 6 - `fct_reorder2()`
+```{r}
+chocolate_rating_by_year_company <- chocolate %>%
+    group_by(company_manufacturer) %>%
+    filter(n() >= 30, review_date <= 2018) %>%
+    group_by(company_manufacturer, review_date) %>%
+    summarize(avg_rating = mean(rating), .groups = "drop")
+
+chocolate_rating_by_year_company
+
+g1 <- chocolate_rating_by_year_company %>%
+    mutate(company_manufacturer = fct_reorder(company_manufacturer, avg_rating)) %>%
+    ggplot(aes(review_date, avg_rating, color = company_manufacturer)) +
+    geom_line() +
+    labs(title = "fct_reorder()")
+
+g2 <- chocolate_rating_by_year_company %>%
+    mutate(company_manufacturer = fct_reorder2(.f = company_manufacturer,
+                                               .x = review_date,
+                                               .y = avg_rating)) %>%
+    ggplot(aes(review_date, avg_rating, color = company_manufacturer)) +
+    geom_line() +
+    labs(title = "fct_reorder2()")
+
+g1 / g2
+```
+
+## 7 - `scale_fill_fermenter()`
+
+Often, I use a continuous variable as the fill/color aesthetics but I prefer it would be binned by steps. `scale_fill_fermenter()` is from the same family of `scale_fill_brewer()` and `scale_fill_distiller()`, but allows binning of the continuous scale and allows to understand whether a value is in a range more easily.
+
+```{r}
+chocolate %>% 
+    count(country_of_bean_origin, sort = T) %>% 
+    head(10) %>% 
+    mutate(country = fct_reorder(country_of_bean_origin, n)) %>% 
+    ggplot(aes(n, country, fill = n)) +
+    geom_col(color = "black") +
+    scale_fill_fermenter(palette = 4, breaks = seq(0,300, 50))
+```
+
+# Interactive coding
+
+## 8 - mid-pipe `print()`
+
+After building a massive piping system, sometimes you want to print an intermediate value to check that everything performs as expected. Just pipe, print, and pipe again. When you finish, you could just `Ctrl + D` those lines.
+
+
+```{r}
+chocolate %>% 
+    print() %>% 
+    select(company_manufacturer, rating) %>% 
+    print() %>% 
+    group_by(company_manufacturer) %>% 
+    summarize(n = n(), avg_rating = mean(rating))
+```
+
+## 9 - `identity()`
+
+This one is a frustration-saver. When working with pipes, it could be exhausting to remove the previous line whenever you delete the last line. Add an `identity()` as the last line, and then you can add/remove all the others without worries.
+
+```{r}
+chocolate %>% 
+    count(company_manufacturer) %>% 
+    identity()
+```
+
+## 10 - `NULL`
+
+This one is actually not a function. It serves the same purpose as `identity()` but for ggplots.
+
+```{r}
+g2 +
+    scale_x_continuous(breaks = seq(2007,2018, 1)) +
+    NULL
+```
+
+# Summary
+
+As I wrote at the beginning, the purpose of this post was to summarize a few functions learned the hard way, to be used a reference for me, and maybe allow you to discover some new functions or new use cases for functions you already know. What are your secret functions?
+
+
+
 
