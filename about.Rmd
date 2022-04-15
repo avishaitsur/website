@@ -1,34 +1,42 @@
 ---
 title: "About me"
 description: |
-
 ---
+
 <center>
-![](profile_image.jpg){width=30%}
+
+![](profile_image.jpg){width="30%"}
+
 </center>
 
-
-I'm a physician, educator, and researcher. 
+I'm a physician, educator, and researcher.
 
 # Education
-I graduated Medicine from [Ben-Gurion University, Israel](https://in.bgu.ac.il/en/pages/default.aspx); completed my Master of Health Administration cum laude from [Bar-Ilan University, Israel](https://www.biu.ac.il/en).
+
+I graduated Medicine from [Ben-Gurion University, Israel](https://in.bgu.ac.il/en/pages/default.aspx); completed my Master of Health Administration cum laude from [Bar-Ilan University, Israel](https://www.biu.ac.il/en); and am currently during my Ph.D. in quantitative epidemiology from [Tel-Aviv University, Israel](https://www.tau.ac.il/).
 
 # Research experience
-I have published over [20 scientific articles](https://scholar.google.co.il/citations?hl=en&user=ClzeE2UAAAAJ), received grants totaling 400K NIS + 40K USD, served as a [reviewer for five journals](https://publons.com/researcher/1394431/avishai-m-tsur/), mentored MD students, and wrote [a book chapter](https://www.routledge.com/Fundamentals-of-Frontline-Surgery/Khan-Nott/p/book/9780367435592). 
+
+I have published over [40 scientific articles](https://scholar.google.co.il/citations?hl=en&user=ClzeE2UAAAAJ), received grants totaling 400K NIS + 40K USD, served as a [reviewer for eight journals](https://publons.com/researcher/1394431/avishai-m-tsur/), mentored MD students, and wrote [a book chapter](https://www.routledge.com/Fundamentals-of-Frontline-Surgery/Khan-Nott/p/book/9780367435592).
 
 # Professional experience
-I started volunteering as a first responder in [Magen David Adom, Israel](https://www.mdais.org/en). During my studies, I worked as a physician assistant in internal medicine. Later, I served as the director of physician assistants in [Soroka Medical Center, Israel](https://hospitals.clalit.co.il/soroka/en/Pages/default.aspx), where I also did my internship. Currently, I'm a resident in internal medicine in [Sheba Tel-Hashomer Medical Center, Israel](https://eng.sheba.co.il/)
+
+I started volunteering as a first responder in [Magen David Adom, Israel](https://www.mdais.org/en). During my studies, I worked as a physician assistant in internal medicine. Later, I served as the director of physician assistants in [Soroka Medical Center, Israel](https://hospitals.clalit.co.il/soroka/en/Pages/default.aspx), where I did my internship. Currently, I'm an internal medicine resident at [Sheba Tel-Hashomer Medical Center, Israel](https://eng.sheba.co.il/)
 
 # Teaching experience
-I taught physics at [Ben-Gurion University, Israel](https://in.bgu.ac.il/en/pages/default.aspx) to biology, pharmacy, nursing, and medical students for over eight years. Later, I taught leadership and tactical medicine to paramedics and physicians. Currently, I teach medical students internal medicine and [R](https://www.r-project.org/) for biomedical research.
+
+For over eight years, I taught physics at [Ben-Gurion University, Israel](https://in.bgu.ac.il/en/pages/default.aspx) to biology, pharmacy, nursing, and medical students. Later, I taught leadership and tactical medicine to paramedics and physicians. Currently, I teach medical students internal medicine and [R](https://www.r-project.org/) for biomedical research.
 
 # Awards
-In 2013-2014 I won twice the Best Speaker award of the Israeli National Debating Championship. In 2014 I also won an Intern's Award of Excellence from [Soroka Medical Center, Israel](https://hospitals.clalit.co.il/soroka/en/Pages/default.aspx). In 2017, I won an Award of Excellence from the Technological and Logistics Directorate, Israel Defense Forces. In 2019, an assay I first-authored won a creative writing contest by the Technological and Logistics Directorate, Israel Defense Forces. In 2020, my team won a Medical Data Science Hackathon for the Israel Defense Forces Medical Corps.
+
+I won twice the Best Speaker award at the Israeli National Debating Championship (2013, 2014); an Intern's Award of Excellence from [Soroka Medical Center, Israel](https://hospitals.clalit.co.il/soroka/en/Pages/default.aspx); an Award of Excellence from the Technological and Logistics Directorate, Israel Defense Forces (2017). In 2019, an assay I first authored won a creative writing contest by the Technological and Logistics Directorate, Israel Defense Forces. In 2020, my team won a Medical Data Science Hackathon of the Israel Defense Forces Medical Corps.
 
 # Research interests
-My main research interest is cardiology. However, I love to clean and wrangle data of all sorts so you can find my name on publications in tactical medicine, rheumatology, endocrinology, and even obstetrics.
+
+My main research interest is cardiology. However, I love to clean and wrangle data of all sorts.
 
 # Personal
-![](family_picture.jpg){width=100%}
 
-I'm married to Miriam and a father to Barack.
+![](family_picture.jpg){width="100%"}
+
+I'm married to Miriam and a father to Barack and Guy.
