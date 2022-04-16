@@ -13,7 +13,7 @@ I'm a physician, educator, and researcher.
 
 # Education
 
-I graduated Medicine from [Ben-Gurion University, Israel](https://in.bgu.ac.il/en/pages/default.aspx); completed my Master of Health Administration cum laude from [Bar-Ilan University, Israel](https://www.biu.ac.il/en); and am currently during my Ph.D. in quantitative epidemiology from [Tel-Aviv University, Israel](https://www.tau.ac.il/).
+I graduated in Medicine from [Ben-Gurion University, Israel](https://in.bgu.ac.il/en/pages/default.aspx); completed my Master of Health Administration cum laude from [Bar-Ilan University, Israel](https://www.biu.ac.il/en); and am currently during my Ph.D. in quantitative epidemiology from [Tel-Aviv University, Israel](https://www.tau.ac.il/).
 
 # Research experience
 
