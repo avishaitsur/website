@@ -4,15 +4,15 @@
       "path": "about.html",
       "title": "About me",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\nI’m a physician, educator, and researcher.\r\nEducation\r\nI graduated Medicine from Ben-Gurion University,\r\nIsrael; completed my Master of Health Administration cum laude from\r\nBar-Ilan University, Israel; and\r\nam currently during my Ph.D. in quantitative epidemiology from Tel-Aviv University, Israel.\r\nResearch experience\r\nI have published over 40\r\nscientific articles, received grants totaling 400K NIS + 40K USD,\r\nserved as a reviewer\r\nfor eight journals, mentored MD students, and wrote a\r\nbook chapter.\r\nProfessional experience\r\nI started volunteering as a first responder in Magen David Adom, Israel. During my\r\nstudies, I worked as a physician assistant in internal medicine. Later,\r\nI served as the director of physician assistants in Soroka\r\nMedical Center, Israel, where I did my internship. Currently, I’m an\r\ninternal medicine resident at Sheba\r\nTel-Hashomer Medical Center, Israel\r\nTeaching experience\r\nFor over eight years, I taught physics at Ben-Gurion University,\r\nIsrael to biology, pharmacy, nursing, and medical students. Later, I\r\ntaught leadership and tactical medicine to paramedics and physicians.\r\nCurrently, I teach medical students internal medicine and R for biomedical research.\r\nAwards\r\nI won twice the Best Speaker award at the Israeli National Debating\r\nChampionship (2013, 2014); an Intern’s Award of Excellence from Soroka\r\nMedical Center, Israel; an Award of Excellence from the\r\nTechnological and Logistics Directorate, Israel Defense Forces (2017).\r\nIn 2019, an assay I first authored won a creative writing contest by the\r\nTechnological and Logistics Directorate, Israel Defense Forces. In 2020,\r\nmy team won a Medical Data Science Hackathon of the Israel Defense\r\nForces Medical Corps.\r\nResearch interests\r\nMy main research interest is cardiology. However, I love to clean and\r\nwrangle data of all sorts.\r\nPersonal\r\n\r\nI’m married to Miriam and a father to Barack and Guy.\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-04-15T17:16:53+03:00"
+      "contents": "\r\n\r\n\r\n\r\nI’m a physician, educator, and researcher.\r\nEducation\r\nI graduated in Medicine from Ben-Gurion University,\r\nIsrael; completed my Master of Health Administration cum laude from\r\nBar-Ilan University, Israel; and\r\nam currently during my Ph.D. in quantitative epidemiology from Tel-Aviv University, Israel.\r\nResearch experience\r\nI have published over 40\r\nscientific articles, received grants totaling 400K NIS + 40K USD,\r\nserved as a reviewer\r\nfor eight journals, mentored MD students, and wrote a\r\nbook chapter.\r\nProfessional experience\r\nI started volunteering as a first responder in Magen David Adom, Israel. During my\r\nstudies, I worked as a physician assistant in internal medicine. Later,\r\nI served as the director of physician assistants in Soroka\r\nMedical Center, Israel, where I did my internship. Currently, I’m an\r\ninternal medicine resident at Sheba\r\nTel-Hashomer Medical Center, Israel\r\nTeaching experience\r\nFor over eight years, I taught physics at Ben-Gurion University,\r\nIsrael to biology, pharmacy, nursing, and medical students. Later, I\r\ntaught leadership and tactical medicine to paramedics and physicians.\r\nCurrently, I teach medical students internal medicine and R for biomedical research.\r\nAwards\r\nI won twice the Best Speaker award at the Israeli National Debating\r\nChampionship (2013, 2014); an Intern’s Award of Excellence from Soroka\r\nMedical Center, Israel; an Award of Excellence from the\r\nTechnological and Logistics Directorate, Israel Defense Forces (2017).\r\nIn 2019, an assay I first authored won a creative writing contest by the\r\nTechnological and Logistics Directorate, Israel Defense Forces. In 2020,\r\nmy team won a Medical Data Science Hackathon of the Israel Defense\r\nForces Medical Corps.\r\nResearch interests\r\nMy main research interest is cardiology. However, I love to clean and\r\nwrangle data of all sorts.\r\nPersonal\r\n\r\nI’m married to Miriam and a father to Barack and Guy.\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-04-16T09:11:55+03:00"
     },
     {
       "path": "index.html",
       "title": "Avishai M Tsur",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-04-15T17:16:54+03:00"
+      "last_modified": "2022-04-16T09:11:56+03:00"
     },
     {
       "path": "publications.html",
@@ -20,7 +20,7 @@
       "description": "List of publications",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-04-15T17:16:55+03:00"
+      "last_modified": "2022-04-16T09:11:57+03:00"
     }
   ],
   "collections": ["posts/posts.json"]
